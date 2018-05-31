@@ -3,11 +3,17 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { RegistComponent } from './components/regist/regist.component';
+
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+	RegistComponent
+	
+	
   ],
   imports: [
     BrowserModule
