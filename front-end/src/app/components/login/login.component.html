@@ -1,8 +1,20 @@
+<div class="container">
+	<h2>Вход в учетную запись</h2>
+	<form [formGroup]="myFirstReactiveForm" (submit)="onSubmit()">
 
-<form>
-  <h2>Вход в учетную запись</h2>
-  <p><input type="text" name="email" placeholder="email address" tabindex="1"></p>
-  <p><input type="password" name="password" placeholder="password" tabindex="2"></p>
-  <a class="button" href="#" tabindex="3" > Войдите </a>
-  
-</form>
+		<input type="text" name="email" formControlName="email" placeholder="email address" tabindex="1">
+		<div class="error" *ngIf="isControlInvalid('email')">
+			Неварный E-mail
+		</div>
+		<br/>
+
+		<input type="password" name="password" formControlName="password" placeholder="password" tabindex="2">
+		<br/>
+		<button  tabindex="3" type="submit"> Войдите </button>
+		<br/>
+
+	</form>
+	<div class="TestForm">
+		 {{myFirstReactiveForm.value | json}}
+	</div>
+</div>

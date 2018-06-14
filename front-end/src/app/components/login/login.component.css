@@ -3,20 +3,33 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100%;
 }
-form{
+
+.container{
 	margin: 0 50px ;
 	padding: 0;
-	width: 300px;
+	
 }
-a{
-	text-decoration:none;
-	color: #336699;
+input{
+	margin: 5px 20px;
 }
-.button{
+button{
 	background: #336699;
 	border-radius: 5px;
-	padding: 10px 20px;
-	width: 200px;
-	text-decoration:none;
+	border: 1px solid #336699;
+	padding: 10px 10px;
+	width: 150px;
+	
 	color: white;
+	margin: 5px 20px;
+}
+
+input.ng-touched.ng-invalid{
+ border-color: red;
+}
+
+.error{
+  color: red;
+}
+.TestForm{
+	padding: 20px 0;
 }
