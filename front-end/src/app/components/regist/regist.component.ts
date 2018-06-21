@@ -1,5 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, ValidationErrors } from '@angular/forms';
+import { HttpService} from '../../http.service';
+import {User} from '../../user';
 
 
 @Component({
@@ -9,10 +11,11 @@ import { FormGroup, FormBuilder, Validators, FormControl, ValidationErrors } fro
   moduleId: module.id   
 })
 export class RegistComponent implements OnInit {
-	
-   myFirstReactiveFormR: FormGroup;
-	
+
+   myFirstReactiveFormR: FormGroup;	
    constructor(private fb: FormBuilder) { }
+   
+
    ngOnInit() {
 	this.initForm();
    }
@@ -48,7 +51,8 @@ private initForm() {
       name: ['', [
         Validators.required, 
         Validators.pattern(/[A-z, А-я]/),
-        Validators.minLength(3)
+        Validators.minLength(3),
+        
       ]
       ],
       email: ['', [
@@ -98,5 +102,7 @@ private passwordValidator(control: FormControl): ValidationErrors {
 	}    
     return null;  
   }*/
+
+ 
 
 }

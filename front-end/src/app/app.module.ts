@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule }   from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { LoginComponent } from './components/login/login.component';
     BrowserModule,
     FormsModule,
 	ReactiveFormsModule,
+	HttpClientModule,
       RouterModule.forRoot([
          {
             path: 'regist',
