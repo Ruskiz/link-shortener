@@ -1,0 +1,69 @@
+<div class="p-2 m-2 " >
+        <h2 class="text-primary">Создайте учетную запись</h2>
+    <form class="col-sm-4 mt-3"   
+            novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+        <h4 class="text-danger font-weight-bold p-a-1 m-b-1" 
+                *ngIf="formSubmitted && form.invalid">
+                Данные введены неверно, проверьте еще раз            
+        </h4>
+        <div class="form-group">
+            <label>Имя</label>
+            <input class="form-control" name="name" 
+                    [(ngModel)]="newUser.name" formControlName="name" />
+            <ul class="text-danger list-unstyled"
+                *ngIf="(formSubmitted || form.controls['name'].dirty) &&
+                    form.controls['name'].invalid">
+                <li *ngFor="let error of form.controls['name'].getValidationMessages()">
+                    {{error}}
+                </li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="email" name="email"
+                 [(ngModel)]="newUser.email" formControlName="email" />
+                <ul class="text-danger list-unstyled"
+                    *ngIf="(formSubmitted || form.controls['email'].dirty) &&
+                        form.controls['email'].invalid">
+                    <li *ngFor="let error of form.controls['email']
+                        .getValidationMessages()">
+                        {{error}}
+                    </li>
+                </ul>
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input class="form-control" type="password" name="password"
+                 [(ngModel)]="newUser.password" formControlName="password"/>
+                <ul class="text-danger list-unstyled"
+                    *ngIf="(formSubmitted || form.controls['password'].dirty) &&
+                        form.controls['password'].invalid">
+                    <li *ngFor="let error of form.controls['password']
+                        .getValidationMessages()">
+                        {{error}}
+                    </li>
+                </ul>
+        </div>
+        <div class="form-group">
+                <label>Подтвердите пароль</label>
+            <input class="form-control" type="password" name="repeatPassword" 
+                [(ngModel)]="newUser.repeatPassword" formControlName="repeatPassword" />
+                <ul class="text-danger list-unstyled"
+                    *ngIf="(formSubmitted || form.controls['repeatPassword'].dirty) &&
+                        form.controls['repeatPassword'].invalid">
+                    <li *ngFor="let error of form.controls['repeatPassword']
+                        .getValidationMessages()">
+                        {{error}}
+                    </li>
+                </ul>
+        </div>
+        
+        <button class="btn btn-primary"  type="submit" 
+        [disabled]="formSubmitted && form.invalid"
+        [class.btn-secondary]="formSubmitted && form.invalid" >
+            Зарегистрироваться
+        </button>
+    </form>
+    <h5 class="m-2">Если у вас уже есть учетная запись, 
+           <br> вы можете <a  routerLink = "/login">войти</a>.</h5> 
+</div>

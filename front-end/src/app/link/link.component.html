@@ -1,0 +1,20 @@
+<form>
+    <h4 class="text-info  m-2">Сократите ссылку:</h4>
+<div class="form-group form-row m-2">
+    <input class="col-sm-7 form-control mr-2"   />
+    <button class="btn btn-info" type="submit">Поехали!</button>
+</div>
+</form>
+<div class="bg-info text-white p-2 m-2">
+    Ваши ссылки
+   </div>
+   <table class="table table-sm table-bordered m-2">
+    <tr><th></th><th>Ссылка оригинал</th><th>Сокращенная ссылка</th><th>Тэги</th><th>Информация</th></tr>
+    <tr *ngFor="let item of getBDLinks(); let i = index">
+    <td>{{i +1}}</td>
+    <td>{{item.linkOriginal}}</td>
+    <td>{{item.linkShortener}}</td>
+    <td>{{item.tags}}</td>
+    <td>{{item.infoLink}}</td>
+    </tr>
+   </table>
